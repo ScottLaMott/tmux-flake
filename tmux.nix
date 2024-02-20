@@ -16,8 +16,6 @@ in
   ]);
   programs.tmux = {
     enable = true;
-    /* Commented out, since set in the mkTmuxConf function */
-    # terminal = "tmux-256color";
     keyMode = "vi";
     baseIndex = 1;
     escapeTime = 1;
