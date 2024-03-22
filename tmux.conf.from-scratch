@@ -17,7 +17,7 @@ set-option -g escape-time 1
 # ]]]
 
 # Copy [[[
-bind-key -T copy-mode    Escape send-keys -X cancel
+bind-key -T copy-mode    Escape send-keys -X cancel           # OOPS: wg. Fehlermeldung in Statusline
 bind-key    Space               copy-mode
 
 bind-key -T copy-mode-vi Escape send-keys -X cancel
@@ -33,12 +33,15 @@ bind-key -T copy-mode-vi Enter  send-keys -X copy-selection-and-cancel
 # ]]]
 
 # Split and Zoom [[[
-bind-key -N "Full screen toggle"        -n M-z resize-pane -Z
-## Split
-## Create
-bind-key -N "Split: create horizontal"  -n M-v split-window -h -c "#{pane_current_path}"
-bind-key -N "Split: create vertical"    -n M-s split-window -v -c "#{pane_current_path}"
+bind-key -N "Toogle full screen"       -n M-z resize-pane -Z
+bind-key -N "Create split horizontal"  -n M-v split-window -h -c "#{pane_current_path}"
+bind-key -N "Create split vertical"    -n M-s split-window -v -c "#{pane_current_path}"
+bind-key -N "Synchronize pane"         -n M-d set-window-option synchronize-pane
 # ]]]
 
-# Motion [[[
+# Navigate [[[
+bind-key -N "Select left pane"                  -n M-h select-pane -L
+bind-key -N "Select lower pane"                 -n M-j select-pane -D
+bind-key -N "Select upper pane"                 -n M-k select-pane -U
+bind-key -N "Select right pane"                 -n M-l select-pane -R
 # ]]]
