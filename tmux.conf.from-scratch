@@ -45,3 +45,12 @@ bind-key -N "Select lower pane"                 -n M-j select-pane -D
 bind-key -N "Select upper pane"                 -n M-k select-pane -U
 bind-key -N "Select right pane"                 -n M-l select-pane -R
 # ]]]
+
+# Colors /Status Line [[[
+# set-option -g  status-style fg=white
+# set-option -ag status-style bg=black
+
+set-option -g  status-style fg=black
+set-option -ag status-style bg=brightyellow
+# ]]]
+
