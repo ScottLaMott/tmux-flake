@@ -1,0 +1,44 @@
+# vim: foldmarker=[[[,]]] foldmethod=marker
+#
+# tmux.conf from scratch (stolen from Ian Henry)
+#
+
+# General [[[
+unbind-key -a -T prefix
+unbind-key -a -T root
+unbind-key -a -T copy-mode
+unbind-key -a -T copy-mode-vi
+
+bind-key    M-r source ./tmux.conf.from-scratch
+
+set-option -g prefix M-a
+set-option -g mode-keys vi
+set-option -g escape-time 1
+# ]]]
+
+# Copy [[[
+bind-key -T copy-mode    Escape send-keys -X cancel
+bind-key    Space               copy-mode
+
+bind-key -T copy-mode-vi Escape send-keys -X cancel
+bind-key -T copy-mode-vi k      send-keys -X cursor-up
+bind-key -T copy-mode-vi j      send-keys -X cursor-down
+bind-key -T copy-mode-vi h      send-keys -X cursor-left
+bind-key -T copy-mode-vi l      send-keys -X cursor-right
+
+bind-key -T copy-mode-vi Space  send-keys -X begin-selection
+bind-key -T copy-mode-vi v      send-keys -X begin-selection
+bind-key -T copy-mode-vi y      send-keys -X copy-selection-no-clear
+bind-key -T copy-mode-vi Enter  send-keys -X copy-selection-and-cancel
+# ]]]
+
+# Split and Zoom [[[
+bind-key -N "Full screen toggle"        -n M-z resize-pane -Z
+## Split
+## Create
+bind-key -N "Split: create horizontal"  -n M-v split-window -h -c "#{pane_current_path}"
+bind-key -N "Split: create vertical"    -n M-s split-window -v -c "#{pane_current_path}"
+# ]]]
+
+# Motion [[[
+# ]]]
