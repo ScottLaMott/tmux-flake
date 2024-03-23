@@ -12,11 +12,12 @@ unbind-key -a -T copy-mode-vi
 bind-key    M-r source ./tmux.conf.from-scratch
 
 set-option -g prefix M-a
-set-option -g mode-keys vi
 set-option -g escape-time 1
 # ]]]
 
 # Copy [[[
+set-option -g mode-keys vi
+
 bind-key -T copy-mode    Escape send-keys -X cancel           # OOPS: wg. Fehlermeldung in Statusline
 bind-key    Space               copy-mode
 
@@ -33,24 +34,30 @@ bind-key -T copy-mode-vi Enter  send-keys -X copy-selection-and-cancel
 # ]]]
 
 # Split and Zoom [[[
-bind-key -N "Toogle full screen"       -n M-z resize-pane -Z
-bind-key -N "Create split horizontal"  -n M-v split-window -h -c "#{pane_current_path}"
-bind-key -N "Create split vertical"    -n M-s split-window -v -c "#{pane_current_path}"
-bind-key -N "Synchronize pane"         -n M-d set-window-option synchronize-pane
+bind-key -N "Toogle full screen"      -n M-z resize-pane -Z
+bind-key -N "Create split horizontal" -n M-v split-window -h -c "#{pane_current_path}"
+bind-key -N "Create split vertical"   -n M-s split-window -v -c "#{pane_current_path}"
+bind-key -N "Synchronize pane"        -n M-d set-window-option synchronize-pane
 # ]]]
 
 # Navigate [[[
-bind-key -N "Select left pane"                  -n M-h select-pane -L
-bind-key -N "Select lower pane"                 -n M-j select-pane -D
-bind-key -N "Select upper pane"                 -n M-k select-pane -U
-bind-key -N "Select right pane"                 -n M-l select-pane -R
+bind-key -N "Select left pane"        -n M-h select-pane -L
+bind-key -N "Select lower pane"       -n M-j select-pane -D
+bind-key -N "Select upper pane"       -n M-k select-pane -U
+bind-key -N "Select right pane"       -n M-l select-pane -R
 # ]]]
 
-# Colors /Status Line [[[
-# set-option -g  status-style fg=white
-# set-option -ag status-style bg=black
+# Windows + Panes [[[
+set-option -g  base-index 1
+set-option -g  pane-base-index 1
 
 set-option -g  status-style fg=black
-set-option -ag status-style bg=brightyellow
+set-option -ag status-style bg=white
+
+set-option -g pane-border-status top
+set-option -g pane-border-lines heavy
+set-option -g pane-border-indicators colour
+
+bind-key -N "create new window"         c new-window -a -t '{end}'
 # ]]]
 
