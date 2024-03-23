@@ -2,6 +2,7 @@
 
 ### todo
 - tmux plugins installieren. wie? in tmux.nix?
+- tmux from scratch fertigstellen
 
 ### done
 
