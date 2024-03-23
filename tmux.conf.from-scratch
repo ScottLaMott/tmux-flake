@@ -58,6 +58,6 @@ set-option -g pane-border-status top
 set-option -g pane-border-lines heavy
 set-option -g pane-border-indicators colour
 
-bind-key -N "create new window"         c new-window -a -t '{end}'
+bind-key -N "Create new window"         c new-window -a -t '{end}'
 # ]]]
 
