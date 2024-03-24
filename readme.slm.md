@@ -2,7 +2,10 @@
 
 ### todo
 - tmux plugins installieren. wie? in tmux.nix?
-- tmux from scratch fertigstellen
+- tmux-from-scratch verbessern
+    - window switching mit prefix-number
+    - aktive Panefarbe verschönern
+    - maus-integration
 
 ### done
 
