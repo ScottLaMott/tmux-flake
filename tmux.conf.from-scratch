@@ -76,4 +76,5 @@ bind-key -N "Create new window"         c new-window -a -t '{end}'
 #-- work in progress [[[
 bind-key -N "choose-tree"                s choose-tree -s
 bind-key -N "choose-tree"                w choose-tree -w
+bind-key -N "detach"                     d detach
 # ]]]
