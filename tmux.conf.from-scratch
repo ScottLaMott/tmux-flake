@@ -13,6 +13,7 @@ bind-key    M-r source ./tmux.conf.from-scratch
 
 set-option -g prefix M-a
 set-option -g escape-time 1
+set-option -g mouse on
 # ]]]
 
 # Copy [[[
@@ -51,13 +52,19 @@ bind-key -N "Select right pane"       -n M-l select-pane -R
 set-option -g  base-index 1
 set-option -g  pane-base-index 1
 
-set-option -g  status-style fg=black
-set-option -ag status-style bg=white
+set-option -g  status-style fg=white
+set-option -ag status-style bg=black
+
+# set-option -g  status-style fg=black
+# set-option -ag status-style bg=colour245
 
 set-option -g pane-border-status top
 set-option -g pane-border-lines heavy
-set-option -g pane-border-indicators colour
+set-option -g pane-border-indicators both
 
 bind-key -N "Create new window"         c new-window -a -t '{end}'
 # ]]]
 
+#-- on work
+bind-key -N "choose-tree"                s choose-tree -s
+bind-key -N "choose-tree"                w choose-tree -w
