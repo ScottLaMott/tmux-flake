@@ -42,6 +42,17 @@ bind-key -N "Synchronize pane"        -n M-d set-window-option synchronize-pane
 # ]]]
 
 # Navigate [[[
+bind-key -N "Select window 1"         -n M-1 select-window -t 1
+bind-key -N "Select window 2"         -n M-2 select-window -t 2
+bind-key -N "Select window 3"         -n M-3 select-window -t 3
+bind-key -N "Select window 4"         -n M-4 select-window -t 4
+bind-key -N "Select window 5"         -n M-5 select-window -t 5
+bind-key -N "Select window 6"         -n M-6 select-window -t 6
+bind-key -N "Select window 7"         -n M-7 select-window -t 7
+bind-key -N "Select window 8"         -n M-8 select-window -t 8
+bind-key -N "Select window 9"         -n M-9 select-window -t 9
+bind-key -N "Select window 0"         -n M-0 select-window -t 0
+
 bind-key -N "Select left pane"        -n M-h select-pane -L
 bind-key -N "Select lower pane"       -n M-j select-pane -D
 bind-key -N "Select upper pane"       -n M-k select-pane -U
@@ -55,16 +66,14 @@ set-option -g  pane-base-index 1
 set-option -g  status-style fg=white
 set-option -ag status-style bg=black
 
-# set-option -g  status-style fg=black
-# set-option -ag status-style bg=colour245
-
-set-option -g pane-border-status top
-set-option -g pane-border-lines heavy
-set-option -g pane-border-indicators both
+set-option -g  pane-border-status top
+set-option -g  pane-border-lines heavy
+set-option -g  pane-border-indicators colour
 
 bind-key -N "Create new window"         c new-window -a -t '{end}'
 # ]]]
 
-#-- on work
+#-- work in progress [[[
 bind-key -N "choose-tree"                s choose-tree -s
 bind-key -N "choose-tree"                w choose-tree -w
+# ]]]
