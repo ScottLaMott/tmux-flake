@@ -3,12 +3,14 @@
 ### todo
 - tmux plugins installieren. wie? in tmux.nix?
 - tmux-from-scratch verbessern
-    - suchen //
-    - window switching mit prefix-number
+    - vim motions in copy mode
+    - paste funktion aktivieren
     - aktive Panefarbe verschönern
     - maus-integration
 
 ### done
+    - window switching mit prefix-number
+    - suchen //
 
 ### WebLinks
 - [Web-link](https://github.com/ScottLaMott/tmux-flake.git)
