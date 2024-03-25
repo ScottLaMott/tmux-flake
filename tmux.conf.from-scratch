@@ -21,6 +21,7 @@ set-option -g mode-keys vi
 
 bind-key -T copy-mode    Escape send-keys -X cancel           # OOPS: wg. Fehlermeldung in Statusline
 bind-key    Space               copy-mode
+bind-key    k                   copy-mode                     # cool key
 
 bind-key -T copy-mode-vi Escape send-keys -X cancel
 bind-key -T copy-mode-vi k      send-keys -X cursor-up
@@ -73,8 +74,19 @@ set-option -g  pane-border-indicators colour
 bind-key -N "Create new window"         c new-window -a -t '{end}'
 # ]]]
 
-#-- work in progress [[[
+#-- work in progress [ [[
 bind-key -N "choose-tree"                s choose-tree -s
 bind-key -N "choose-tree"                w choose-tree -w
-bind-key -N "detach"                     d detach
+bind-key -N "detach-session"             d detach
+
+# Search [ [[
+# bind -N "Search forward" /  copy-mode \; command-prompt -i -p "(search down)" { send -X search-forward-incremental  "%%%" }
+# bind -N "Search back" ?     copy-mode \; command-prompt -i -p "(search up)"   { send -X search-backward-incremental "%%%" }
+
+bind -N "Search forward" -T copy-mode-vi / command-prompt -i -p "(search down)" { send -X search-forward-incremental  "%%%" }
+bind -N "Search back" -T    copy-mode-vi ? command-prompt -i -p "(search up)"   { send -X search-backward-incremental "%%%" }
+bind -N "Search back" -T    copy-mode-vi n send -X search-again
+bind -N "Search back" -T    copy-mode-vi N send -X search-reverse
+
+bind -N "Vim-like: select whole line"            -T copy-mode-vi V send -X select-line
 # ]]]
