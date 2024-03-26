@@ -4,11 +4,11 @@
 - tmux plugins installieren. wie? in tmux.nix?
 - tmux-from-scratch verbessern
     - vim motions in copy mode
-    - paste funktion aktivieren
     - aktive Panefarbe verschönern
     - maus-integration
 
 ### done
+    - paste funktion aktiviert
     - window switching mit prefix-number
     - suchen //
 
