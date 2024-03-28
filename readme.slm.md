@@ -6,6 +6,8 @@
     - vim motions in copy mode
     - aktive Panefarbe verschönern
     - maus-integration
+    - markieren verbessern v/V/C-v
+    - clear//clear-history verbessern
 
 ### done
     - paste funktion aktiviert
