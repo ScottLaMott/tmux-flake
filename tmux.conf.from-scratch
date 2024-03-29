@@ -13,6 +13,7 @@ bind-key    M-r source ./tmux.conf.from-scratch
 
 set-option -g prefix M-a
 set-option -g escape-time 1
+set-option -g status-left-length 20
 set-option -g mouse on
 # ]]]
 
